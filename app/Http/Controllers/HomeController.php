@@ -9,7 +9,7 @@ use App\Models\DauThau;
 
 class HomeController extends Controller
 {
-    public function index(Request $request){
+    public function process(Request $request){
         $dauthaus = DauThau::where('status', 2)->get();
 
         foreach($dauthaus as $duan){
