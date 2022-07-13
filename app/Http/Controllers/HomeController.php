@@ -10,7 +10,8 @@ use App\Models\DauThau;
 class HomeController extends Controller
 {
     public function index(Request $request){
-        return view('welcome');
+        $duans = DauThau::orderBy('bidportlet_id', 'desc')->where('status', 3)->take(10)->get();
+        return view('home', ['duans' => $duans]);
     }
 
     public function process(Request $request){

@@ -9,4 +9,9 @@ class LinhVuc extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    
+    public function duans()
+    {
+        return $this->hasMany(DuAn::class);
+    }
 }
