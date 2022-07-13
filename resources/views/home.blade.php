@@ -18,5 +18,6 @@
             @endforeach
         </tbody>
     </table>
+    {{ $duans->links() }}
 </body>
 </html>
