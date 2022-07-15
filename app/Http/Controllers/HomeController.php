@@ -44,7 +44,7 @@ class HomeController extends Controller
     }
 
     public function getChapters(Request $request, $id) {
-        return StoryResource::collection(Story::find($id));
+        return StoryResource::collection(Chapter::where('category_id', $id)->get());
     }
 
     public function getChapter(Request $request, $id) {
