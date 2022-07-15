@@ -30,3 +30,7 @@ Route::get('/stories', function () {
 Route::get('/categories', function () {
     return CategoryResource::collection(Category::all());
 });
+
+Route::get('/categories/{id}', function () {
+    return CategoryResource::collection(Category::all());
+});

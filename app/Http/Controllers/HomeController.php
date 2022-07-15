@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 use App\Helpers\Helper;
 use App\Models\DauThau;
 
+use App\Http\Resources\CategoryResource;
+use App\Http\Resources\StoryResource;
+use App\Http\Resources\ChapterResource;
+use App\Models\Category;
+use App\Models\Story;
+use App\Models\Chapter;
+
+
 class HomeController extends Controller
 {
     public function index(Request $request){
@@ -25,5 +33,21 @@ class HomeController extends Controller
             $duan->status = 3;
             $duan->save();
         }
+    }
+
+    public function getCategories() {
+        return CategoryResource::collection(Category::all());
+    }
+
+    public function getCategory(Request $request, $id) {
+        return CategoryResource::collection(Story::where('category_id', $id)->get());
+    }
+
+    public function getStory(Request $request, $id) {
+        return StoryResource::collection(Story::find($id));
+    }
+
+    public function getChapter(Request $request, $id) {
+        return ChapterResource::collection(Chapter::find($id));
     }
 }

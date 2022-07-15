@@ -18,9 +18,8 @@ class StoryResource extends JsonResource
             'id' => $this->id,
             'slug' => $this->slug,
             'name' => $this->name,
-            'image' => $this->image,
-            'chapters' => $this->chapters,
-            'category' => $this->category,
+            'content' => $this->content,
+            'story' => $this->story,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];
