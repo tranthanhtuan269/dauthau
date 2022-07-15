@@ -3,12 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
-
-use App\Http\Resources\CategoryResource;
-use App\Models\Category;
-use App\Http\Resources\StoryResource;
-use App\Models\Story;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,14 +17,8 @@ use App\Models\Story;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/process', [HomeController::class, 'process']);
 
-Route::get('/stories', function () {
-    return StoryResource::collection(Story::all());
-});
 
-Route::get('/categories', function () {
-    return CategoryResource::collection(Category::all());
-});
-
-Route::get('/categories/{id}', function () {
-    return CategoryResource::collection(Category::all());
-});
+Route::get('/categories', [HomeController::class, 'getCategories']);
+Route::get('/categories/{id}', [HomeController::class, 'getStories']);
+Route::get('/stories/{id}', [HomeController::class, 'getChapters']);
+Route::get('/chapters/{id}', [HomeController::class, 'getChapter']);

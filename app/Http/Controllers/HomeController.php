@@ -39,11 +39,11 @@ class HomeController extends Controller
         return CategoryResource::collection(Category::all());
     }
 
-    public function getCategory(Request $request, $id) {
+    public function getStories(Request $request, $id) {
         return CategoryResource::collection(Story::where('category_id', $id)->get());
     }
 
-    public function getStory(Request $request, $id) {
+    public function getChapters(Request $request, $id) {
         return StoryResource::collection(Story::find($id));
     }
 
