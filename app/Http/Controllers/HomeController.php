@@ -34,20 +34,4 @@ class HomeController extends Controller
             $duan->save();
         }
     }
-
-    public function getCategories() {
-        return CategoryResource::collection(Category::all());
-    }
-
-    public function getStories(Request $request, $id) {
-        return StoryResource::collection(Story::where('category_id', $id)->get());
-    }
-
-    public function getChapters(Request $request, $id) {
-        return ChapterResource::collection(Chapter::where('story_id', $id)->get());
-    }
-
-    public function getChapter(Request $request, $id) {
-        return ChapterResource::collection(Chapter::find($id));
-    }
 }
