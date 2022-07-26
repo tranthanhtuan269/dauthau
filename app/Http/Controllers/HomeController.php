@@ -18,8 +18,45 @@ use App\Models\Chapter;
 class HomeController extends Controller
 {
     public function index(Request $request){
-        $duans = DauThau::orderBy('created_at', 'desc')->where('status', 3)->paginate(15);
-        return view('home', ['duans' => $duans]);
+        
+        return view('index');
+    }
+
+    public function project(){
+        return view('project');
+    }
+
+    public function about(){
+        return view('about');
+    }
+
+    public function service(){
+        return view('service');
+    }
+
+    public function team(){
+        return view('team');
+    }
+
+    public function testimonial(){
+        return view('team');
+    }
+
+    public function contact(){
+        return view('contact');
+    }
+
+    public function feature(){
+        return view('feature');
+    }
+
+    public function quote(){
+        return view('quote');
+    }
+
+    public function dauthau(){
+        $duans = DauThau::orderBy('created_at', 'desc')->where('status', 3)->paginate(10);
+        return view('dauthau', ['duans' => $duans]);
     }
 
     public function process(Request $request){

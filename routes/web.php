@@ -15,10 +15,10 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/gioi-thieu', [HomeController::class, 'about']);
+Route::get('/dich-vu', [HomeController::class, 'service']);
+Route::get('/du-an', [HomeController::class, 'project']);
+Route::get('/lien-he', [HomeController::class, 'contact']);
+Route::get('/dau-thau', [HomeController::class, 'dauthau']);
+
 Route::get('/process', [HomeController::class, 'process']);
-
-
-Route::get('/categories', [HomeController::class, 'getCategories']);
-Route::get('/categories/{id}', [HomeController::class, 'getStories']);
-Route::get('/stories/{id}', [HomeController::class, 'getChapters']);
-Route::get('/chapters/{id}', [HomeController::class, 'getChapter']);
