@@ -9,4 +9,9 @@ class LoaiGoiThau extends Model
 {
     use HasFactory;
     public $timestamps = false;
+
+    public function goithaus()
+    {
+        return $this->hasMany(GoiThau::class);
+    }
 }

@@ -10,8 +10,8 @@ class BenMoiThau extends Model
     use HasFactory;
     public $timestamps = false;
 
-    public function duans()
+    public function dauthaus()
     {
-        return $this->hasMany(DuAn::class);
+        return $this->hasMany(GoiThau::class, 'ben_moi_thau');
     }
 }

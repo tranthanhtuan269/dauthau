@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\DauThau;
+use App\Models\GoiThau;
 
-class DauThauController extends Controller
+class GoiThauController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class DauThauController extends Controller
      */
     public function index()
     {
-        $duans = DauThau::orderBy('thoi_gian_nhan_e_hsdt_tu', 'desc')->where('status', 3)->paginate(10);
-        return view('dauthau.index', ['duans' => $duans]);
+        $duans = GoiThau::orderBy('thoi_gian_nhan_e_hsdt_tu', 'desc')->where('status', 3)->paginate(10);
+        return view('GoiThau.index', ['duans' => $duans]);
     }
 
 
@@ -48,9 +48,9 @@ class DauThauController extends Controller
      */
     public function show($id)
     {
-        $dauthau = DauThau::find($id);
-        if($dauthau){
-            return view('dauthau.view', ['dauthau' => $dauthau]);
+        $GoiThau = GoiThau::find($id);
+        if($GoiThau){
+            return view('GoiThau.view', ['GoiThau' => $GoiThau]);
         }else{
             return abort('404');
         }

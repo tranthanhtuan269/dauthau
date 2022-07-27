@@ -14,7 +14,7 @@
         <div class="h-time-line">&nbsp;</div>
     </td>
     <td class="h-tbl-border">
-        <p class="color-1" title="{{ $project->ten_goi_thau }}"><strong class="text-up color-1 ellipsis-content-1row"> <a href="{{ url('/') }}/dau-thau/{{ $project->id }}" class="container-tittle">{{ $project->ten_goi_thau }}</a></strong></p>
+        <p class="color-1" title="{{ $project->ten_goi_thau }}"><strong class="text-up color-1 ellipsis-content-1row"> <a href="{{ url('/') }}/goi-thau/{{ $project->id }}" class="container-tittle">{{ $project->ten_goi_thau }}</a></strong></p>
         <p class="ellipsis-content-1row" title="{{ isset($project->creator) ? $project->creator->name : '' }}">Bên mời thầu: {{ isset($project->creator) ? $project->creator->name : "" }}</p>
         <p class="ellipsis-content-1row" title="{{ $project->dia_diem_thuc_hien_goi_thau }}">Địa điểm thực hiện gói thầu: {{ $project->dia_diem_thuc_hien_goi_thau }}</p>
     </td>

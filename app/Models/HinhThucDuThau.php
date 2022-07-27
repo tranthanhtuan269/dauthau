@@ -10,8 +10,8 @@ class HinhThucDuThau extends Model
     use HasFactory;
     public $timestamps = false;
 
-    public function duans()
+    public function goithaus()
     {
-        return $this->hasMany(DuAn::class);
+        return $this->hasMany(GoiThau::class, 'hinh_thuc_du_thau');
     }
 }

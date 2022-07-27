@@ -86,7 +86,7 @@
                 <a href="/gioi-thieu" class="nav-item nav-link @if(Request::is('gioi-thieu')) active @endif">Giới thiệu</a>
                 <a href="/dich-vu" class="nav-item nav-link @if(Request::is('dich-vu')) active @endif">Dịch vụ</a>
                 <a href="/du-an" class="nav-item nav-link @if(Request::is('du-an')) active @endif">Dự án</a>
-                <a href="/dau-thau" class="nav-item nav-link @if(Request::is('dau-thau/*')) active @endif">Đấu thầu</a>
+                <a href="/goi-thau" class="nav-item nav-link @if(Request::is('goi-thau/*')) active @endif">Đấu thầu</a>
                 <!-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu bg-light m-0">
