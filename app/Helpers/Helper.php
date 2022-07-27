@@ -13,7 +13,9 @@ use App\Models\PhuongThucLuaChonNhaThau;
 class Helper
 {
     public function processDate($str){
-        return \Carbon\Carbon::createFromFormat('d/m/Y H:i', $str)->format('Y-m-d H:i:s');
+        if(strlen($str) > 0){
+            return \Carbon\Carbon::createFromFormat('d/m/Y H:i', $str)->format('Y-m-d H:i:s');
+        }
     }
 
     public static function xuLyInfo1($duan){
@@ -169,7 +171,7 @@ class Helper
                     $duan->dia_diem_nhan_hsdt = $pieces2[1];
                 }
                 if($pieces2[0] == "Địa điểm thực hiện gói thầu</td> "){
-                    $duan->dia_diem_thuc_hien_goi_thau = $pieces2[1];
+                    $duan->dia_diem_thuc_hien_goi_thau = substr($pieces2[1], 0, -20);
                 }
             }
         }

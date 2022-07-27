@@ -21,15 +21,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -82,11 +82,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="/" class="nav-item nav-link active">Trang chủ</a>
-                <a href="/gioi-thieu" class="nav-item nav-link">Giới thiệu</a>
-                <a href="/dich-vu" class="nav-item nav-link">Dịch vụ</a>
-                <a href="/du-an" class="nav-item nav-link">Dự án</a>
-                <a href="/dau-thau" class="nav-item nav-link">Đấu thầu</a>
+                <a href="/" class="nav-item nav-link @if(Request::is('/')) active @endif">Trang chủ</a>
+                <a href="/gioi-thieu" class="nav-item nav-link @if(Request::is('gioi-thieu')) active @endif">Giới thiệu</a>
+                <a href="/dich-vu" class="nav-item nav-link @if(Request::is('dich-vu')) active @endif">Dịch vụ</a>
+                <a href="/du-an" class="nav-item nav-link @if(Request::is('du-an')) active @endif">Dự án</a>
+                <a href="/dau-thau" class="nav-item nav-link @if(Request::is('dau-thau/*')) active @endif">Đấu thầu</a>
                 <!-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu bg-light m-0">
@@ -97,7 +97,7 @@
                         <a href="/404" class="dropdown-item">404 Page</a>
                     </div>
                 </div> -->
-                <a href="/lien-he" class="nav-item nav-link">Liên hệ</a>
+                <a href="/lien-he" class="nav-item nav-link @if(Request::is('lien-he')) active @endif">Liên hệ</a>
             </div>
             <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Mua dịch vụ<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
@@ -134,22 +134,22 @@
                     <h5 class="text-white mb-4">Project Gallery</h5>
                     <div class="row g-2">
                         <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-1.jpg" alt="">
+                            <img class="img-fluid rounded" src="/img/gallery-1.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-2.jpg" alt="">
+                            <img class="img-fluid rounded" src="/img/gallery-2.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-3.jpg" alt="">
+                            <img class="img-fluid rounded" src="/img/gallery-3.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-4.jpg" alt="">
+                            <img class="img-fluid rounded" src="/img/gallery-4.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-5.jpg" alt="">
+                            <img class="img-fluid rounded" src="/img/gallery-5.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-6.jpg" alt="">
+                            <img class="img-fluid rounded" src="/img/gallery-6.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -188,16 +188,16 @@
     <!-- JavaScript Libraries -->
     <script src="/js/jquery-3.4.1.min.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="/lib/wow/wow.min.js"></script>
+    <script src="/lib/easing/easing.min.js"></script>
+    <script src="/lib/waypoints/waypoints.min.js"></script>
+    <script src="/lib/counterup/counterup.min.js"></script>
+    <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="/lib/lightbox/js/lightbox.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>
