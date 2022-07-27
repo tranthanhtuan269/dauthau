@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\DauThau;
+use App\Models\BenMoiThau;
 
-class DauThauController extends Controller
+class BenMoiThauController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,8 @@ class DauThauController extends Controller
      */
     public function index()
     {
-        $duans = DauThau::orderBy('thoi_gian_nhan_e_hsdt_tu', 'desc')->where('status', 3)->paginate(10);
-        return view('dauthau.index', ['duans' => $duans]);
+        //
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -48,9 +46,10 @@ class DauThauController extends Controller
      */
     public function show($id)
     {
-        $dauthau = DauThau::find($id);
-        if($dauthau){
-            return view('dauthau.view', ['dauthau' => $dauthau]);
+        $benMoiThau = BenMoiThau::find($id);
+
+        if($benMoiThau){
+            return view('benmoithau.view', ['benMoiThau' => $benMoiThau]);
         }else{
             return abort('404');
         }
