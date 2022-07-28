@@ -17,6 +17,7 @@ use App\Http\Controllers\BenMoiThauController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('/');
+Route::get('/test', [HomeController::class, 'test'])->name('/');
 Route::get('/gioi-thieu', [HomeController::class, 'about'])->name('gioi-thieu');
 Route::get('/dich-vu', [HomeController::class, 'service'])->name('dich-vu');
 Route::get('/du-an', [HomeController::class, 'project'])->name('du-an');
