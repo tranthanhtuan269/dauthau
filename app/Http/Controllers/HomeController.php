@@ -60,4 +60,14 @@ class HomeController extends Controller
             $duan->save();
         }
     }
+
+    public function test(){
+        $to_name = "Tuantt";
+        $to_email = "tuantt6393@gmail.com";
+        $data = array("name"=>"Ogbonna Vitalis", "body" => "A test mail");
+        \Mail::send("emails.mail", $data, function($message) use ($to_name, $to_email) {
+            $message->to($to_email, $to_name)->subject("Laravel Test Mail");
+            $message->from("SENDER_EMAIL_ADDRESS","Test Mail");
+        });
+    }
 }

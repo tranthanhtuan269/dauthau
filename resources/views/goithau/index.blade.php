@@ -118,7 +118,7 @@
                         <div class="container-fluid" id="yui_patched_v3_11_0_1_1658905265251_164">
                             <div class="row" id="yui_patched_v3_11_0_1_1658905265251_163">
                                 <div class="col-sm-12" id="yui_patched_v3_11_0_1_1658905265251_162">
-                                    <form action="http://muasamcong.mpi.gov.vn/lua-chon-nha-thau?p_auth=ET2iFtDyAf&amp;p_p_id=luachonnhathau_WAR_bidportlet&amp;p_p_lifecycle=1&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_col_id=column-1&amp;p_p_col_count=2&amp;_luachonnhathau_WAR_bidportlet_currentPage=1&amp;_luachonnhathau_WAR_bidportlet_currentPage1=1&amp;_luachonnhathau_WAR_bidportlet_currentPage2=1&amp;_luachonnhathau_WAR_bidportlet_javax.portlet.action=list" class="form " id="_luachonnhathau_WAR_bidportlet_searchForm" method="post" name="_luachonnhathau_WAR_bidportlet_searchForm" autocomplete="on">
+                                    <form action="" class="form " id="_luachonnhathau_WAR_bidportlet_searchForm" method="post" name="_luachonnhathau_WAR_bidportlet_searchForm" autocomplete="on">
                                         <input name="_luachonnhathau_WAR_bidportlet_formDate" type="hidden" value="1658904883080">
                                         <div class="form-group" id="yui_patched_v3_11_0_1_1658905265251_161">
                                             <div class="row">
