@@ -16,15 +16,23 @@
         background: #f0f2f3;
         border-bottom: 0!important;
     }
+
+    .content .t-tbl-nn th:nth-child(3),
+    .content .t-tbl-nn th:nth-child(4){
+        border-left: 1px solid #dee2e6;
+    }
     .content .t-tbl-nn th:nth-child(1) {
         background: #d6d5d5;
     }
     .content .t-tbl-nn td {
         border-top: 0!important;
+        border-left: 1px solid #dee2e6;
     }
-    .content .t-tbl-nn td:nth-child(2) {
-        border-bottom: 1px solid #ccc;
+    .content .t-tbl-nn td:last-child,
+    .content .t-tbl-nn th:nth-child(4) {
+        border-right: 1px solid #dee2e6;
     }
+
 </style>
     <!-- Page Header Start -->
     <div class="container-fluid py-5 mb-5" style="background-color: #eee;">
@@ -38,6 +46,8 @@
                             <tr>
                                 <th class="text-center">STT</th>
                                 <th>Tên doanh nghiệp</th>
+                                <th>Số điện thoại</th>
+                                <th>Thành phố</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,7 +55,13 @@
                             <tr>
                                 <td class="text-center">{{$key + 1}}</td>
                                 <td>
-                                    <a href="/nha-thau/{{$company->id}}">{{$company->ten}}</a>
+                                    <a href="/nha-thau/{{$company->id}}">{!!$company->ten!!}</a>
+                                </td>
+                                <td>
+                                    {{$company->phone}}
+                                </td>
+                                <td>
+                                    {{$company->city}}
                                 </td>
                             </tr>
                             @endforeach
