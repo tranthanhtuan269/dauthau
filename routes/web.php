@@ -27,3 +27,5 @@ Route::get('/goi-thau/{id}', [GoiThauController::class, 'show'])->name('goi-thau
 Route::get('/ben-moi-thau/{id}', [BenMoiThauController::class, 'show'])->name('ben-moi-thau/show');
 
 Route::get('/process', [HomeController::class, 'process']);
+Route::get('/process2', [HomeController::class, 'process2']);
+Route::get('/process3', [HomeController::class, 'process3']);

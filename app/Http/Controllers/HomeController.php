@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Helpers\Helper;
-use App\Models\DauThau;
+use App\Models\GoiThau;
+use App\Models\Company;
 
 class HomeController extends Controller
 {
@@ -47,7 +48,7 @@ class HomeController extends Controller
     }
 
     public function process(Request $request){
-        $dauthaus = DauThau::where('status', 2)->orderBy('id', 'desc')->get();
+        $dauthaus = GoiThau::where('status', 2)->orderBy('id', 'desc')->get();
 
         foreach($dauthaus as $duan){
             echo $duan->id . "<br />";
@@ -58,6 +59,29 @@ class HomeController extends Controller
             $arrXuLyInfo4 = Helper::xuLyInfo4($duan);
             $duan->status = 3;
             $duan->save();
+        }
+    }
+
+    public function process2(Request $request){
+        $nhathaus = Company::where('status', 2)->get();
+
+        foreach($nhathaus as $nhathau){
+            echo $nhathau->id . "<br />";
+            flush();
+            $arrXuLyInfo1 = Helper::xuLyNhaThau1($nhathau);
+            $arrXuLyInfo2 = Helper::xuLyNhaThau2($nhathau);
+            $nhathau->status = 3;
+            $nhathau->save();
+        }
+    }
+
+    public function process3(Request $request){
+        $nhathaus = Company::where('status', 3)->get();
+
+        foreach($nhathaus as $nhathau){
+            $pieces = explode("</td>", $nhathau->phone);
+            $nhathau->phone = $pieces[0];
+            $nhathau->save();
         }
     }
 

@@ -9,6 +9,8 @@ use App\Models\LoaiHopDong;
 use App\Models\HinhThucDuThau;
 use App\Models\HinhThucLuaChonNhaThau;
 use App\Models\PhuongThucLuaChonNhaThau;
+use App\Models\Category;
+
 
 class Helper
 {
@@ -16,6 +18,80 @@ class Helper
         if(strlen($str) > 0){
             return \Carbon\Carbon::createFromFormat('d/m/Y H:i', $str)->format('Y-m-d H:i:s');
         }
+    }
+
+    public static function xuLyNhaThau1($nhathau){
+        $pieces = explode("</td> </tr> <tr> <td", $nhathau->info1); //0103018906
+        foreach($pieces as $key=>$value){
+            if($key == 0){
+                $nhathau->gpkd = substr($value, 92, 10);
+            }
+            if($key == 1){
+                $nhathau->ten = substr($value, 52);
+            }
+            if($key == 2){
+                $nhathau->name = substr($value, 53);
+            }
+            if($key == 3){
+                $nhathau->type = substr($value, 107);
+            }
+            if($key == 5){
+                $nhathau->phone = substr($value, 44, -42);
+            }
+            if($key == 6){
+                $nhathau->address = substr($value, 49);
+            }
+            if($key == 8){
+                $nhathau->city = substr($value, 43, -74);
+            }
+        }
+        $nhathau->save();
+    }
+
+    public static function xuLyNhaThau2($nhathau){
+        $pieces = explode("</td> </tr> <tr> <td", $nhathau->info2);
+        $nhathau->categories()->detach();
+        foreach($pieces as $key=>$value){
+            if($key == 0){
+                continue;
+                $type = explode("</td> <td>", $value);
+                $category = Category::where('name', $type[1])->first();
+                if($category){
+                    $nhathau->categories()->attach($category->id);
+                }else{
+                    $category = new Category;
+                    $category->name = $type[1];
+                    $category->save();
+                    $nhathau->categories()->attach($category->id);
+                }
+            }else{
+                if($key == count($pieces) - 1){
+                    $type1 = explode("</td> <td>", $value);
+                    $type = explode("</td>", $type1[1]);
+                    $category = Category::where('name', $type[0])->first();
+                    if($category){
+                        $nhathau->categories()->attach($category->id);
+                    }else{
+                        $category = new Category;
+                        $category->name = $type[0];
+                        $category->save();
+                        $nhathau->categories()->attach($category->id);
+                    }
+                }else{
+                    $type = explode("</td> <td>", $value);
+                    $category = Category::where('name', $type[1])->first();
+                    if($category){
+                        $nhathau->categories()->attach($category->id);
+                    }else{
+                        $category = new Category;
+                        $category->name = $type[1];
+                        $category->save();
+                        $nhathau->categories()->attach($category->id);
+                    }
+                }
+            }
+        }
+        $nhathau->save();
     }
 
     public static function xuLyInfo1($duan){
