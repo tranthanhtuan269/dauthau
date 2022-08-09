@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <style type="text/css">
     .h-tbl-time {
         border: 1px solid #32C36C;
@@ -39,13 +38,16 @@
     .color-1 {
         color: #32C36C;
     }
-    .h-top-s-tab>li.active>a, 
-    .h-top-s-tab>li.active>a:focus, 
-    .h-top-s-tab>li.active>a:hover, 
+    .h-top-s-tab>li.active>a,
+    .h-top-s-tab>li.active>a:focus,
+    .h-top-s-tab>li.active>a:hover,
     .h-top-s-tab li a:hover {
         background: rgba(1,1,1,0.5);
         color: #fff;
         font-weight: bold;
+        padding: 10px 30px;
+        border-radius: 4px 4px 0 0;
+        border-bottom: 1px solid #fff
     }
     .h-top-s-content {
         background: rgba(1,1,1,0.5);
@@ -58,12 +60,12 @@
     .active>div:first-child {
         display: block;
     }
-    .form-group, 
+    .form-group,
     .control-group {
         margin-bottom: 5px!important;
         width: 100%;
     }
-    .form-group, 
+    .form-group,
     .control-group {
         margin-bottom: 5px!important;
         width: 100%;
@@ -87,12 +89,52 @@
         width: 100%;
         font-size: 14px;
     }
+    .h-top-s-input::placeholder {
+        color: #fff
+    }
+    .h-top-s-input option {
+        background: rgba(1,1,1,0.6);
+    }
+    select.h-top-s-input {
+        appearance: none!important;
+        background-image: url(../img/dropdown-arrow.png)!important;
+        background-repeat: no-repeat!important;
+        background-position: right center!important;
+    }
     .h-top-s-btn {
         width: 34px;
         height: 34px;
         display: inline-block;
         background: url(/img/ico-search.png) no-repeat center center;
         vertical-align: middle;
+    }
+    .nav.nav-tabs {
+        margin-bottom: 10px;
+        border:none;
+    }
+    .date.input-group {
+        position: relative;
+        display: table;
+        border-collapse: separate;
+    }
+    .date.input-group>div {
+        display: table-cell;
+    }
+    .date.input-group>div input {
+        border-radius:0!important;
+    }
+    .date.input-group .input-group-addon {
+        padding: 6px 12px;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background: rgba(205,205,205,0.4)!important;
+        color: #fefeff!important;
+        display: table-cell;
+        border-left:none!important;
     }
     .witdth-percent-23 { width: 23%; }
     .witdth-percent-20 { width: 20%; }
@@ -110,7 +152,7 @@
             <div class="h-top-s-box" id="yui_patched_v3_11_0_1_1658905265251_166">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs h-top-s-tab" role="search">
-                    <li role="s1" class="active"><a href="#s1" aria-controls="s1" role="s1" data-toggle="tab" style="border-bottom: 1px solid #fff !important">BỘ LỌC TÌM KIẾM <i class="fas fa-search m-l-10"></i> </a></li>
+                    <li role="s1" class="active"><a href="#s1" aria-controls="s1" role="s1" data-toggle="tab" >BỘ LỌC TÌM KIẾM <i class="fas fa-search m-l-10"></i> </a></li>
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content h-top-s-content" id="yui_patched_v3_11_0_1_1658905265251_165">
@@ -155,7 +197,7 @@
                                                                         display: none !important;
                                                                     }
                                                                 }
-                                                                
+
                                                                 .ms-editor-squiggles-container {
                                                                     all: initial;
                                                                 }
@@ -274,10 +316,5 @@
     </div>
     <!-- Page Header End -->
 
-    <script>
-        $(document).ready(function(){
-            $('.datepicker').datepicker();
-        })
-    </script>
-        
+
 @endsection

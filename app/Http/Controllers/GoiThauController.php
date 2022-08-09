@@ -49,9 +49,9 @@ class GoiThauController extends Controller
     public function show($id)
     {
         $GoiThau = GoiThau::find($id);
-        if($GoiThau){
-            return view('GoiThau.view', ['GoiThau' => $GoiThau]);
-        }else{
+        if ($GoiThau) {
+            return view('GoiThau.view', ['dauthau' => $GoiThau]);
+        } else {
             return abort('404');
         }
     }
